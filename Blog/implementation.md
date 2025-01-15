@@ -54,3 +54,11 @@ int main() {
 ```
 
 This one has some issues with Life Time Battery indicator beside being disconnected, still shows "NO READING - Charger is connected". But it dosen't matter - since it's a playground, dosen't have to work.
+___
+
+**Learning how to use resource strings in the code** ... i'll be honest, i used ChatGPT with generating resource files and i had nothing else to that -  today i tried to get it working, and see if its better:
+
+
+
+
+![image](https://github.com/user-attachments/assets/e7c4d0c2-1e08-4c40-ae36-a8c2b52ab6c3)
