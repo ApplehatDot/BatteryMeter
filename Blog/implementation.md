@@ -63,5 +63,5 @@ ___
 
 ![image](https://github.com/user-attachments/assets/e7c4d0c2-1e08-4c40-ae36-a8c2b52ab6c3)
 ____
-## 2. Writing basic WinPI stuff
+## 2. Writing basic WinAPI stuff
 While being in school, I made a basic WinAPI window with 300 x 430 (Uploading main.c | [see commit](https://github.com/ApplehatDot/BatteryMeter/commit/b6f620220e1ebb9da65cabeddafdc5880218249d) )
