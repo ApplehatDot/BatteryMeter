@@ -1,0 +1,11 @@
+/** BugCHK Window 
+	By Applehat. */
+
+#include "Bugres.h"
+
+IDI_BUGCHK ICON "bugchk.ico"
+
+STRINGTABLE
+BEGIN
+    DESCR, "Such a catastrophic error occurred, that this BugCheck needed to take action."
+END
