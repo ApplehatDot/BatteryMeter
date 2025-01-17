@@ -65,3 +65,9 @@ ___
 ____
 ## 2. Writing basic WinAPI stuff
 While being in school, I made a basic WinAPI window with 300 x 430 (Uploading main.c | [see commit](https://github.com/ApplehatDot/BatteryMeter/commit/b6f620220e1ebb9da65cabeddafdc5880218249d) )
+
+.. got a bit distracted, and made this bugchk window (add the bugchk thing | [see commit](https://github.com/ApplehatDot/BatteryMeter/commit/889a686ed46e6308eac58f7fdb15be433e42df13) )... it took like 4+ hours :\
+
+
+![image](https://github.com/user-attachments/assets/000c25d7-a125-4066-89af-4385db272fd3)
+
