@@ -1,0 +1,16 @@
+#include "resource.h"
+
+// English (default) resource
+
+// define strings as wchar_t, for future compability
+
+STRINGTABLE
+BEGIN
+	LOADING_WINPROC, L"loading Window Procedures..."
+	WELCOME_MSG, L"Welcome to %s!"
+	
+	TITLE_NOJOB, L"BatteryMeter - No active Job"
+	TITLE_STATUS, L"BatteryMeter - Job Status: %s"
+	TITLE_JOBFAIL, L"BatteryMeter - Job Failed"
+	
+END
