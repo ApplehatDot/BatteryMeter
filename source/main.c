@@ -19,6 +19,7 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam){
 				0,
 				L"STATIC",
 				L"Loading Window Procedures ...",
+				0,	// DWstyles
 				60, 215,
 				100, 30,
 				hwnd,NULL, NULL, NULL);
