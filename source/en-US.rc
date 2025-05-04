@@ -1,16 +1,41 @@
 #include "resource.h"
 
 // English (default) resource
-
 // define strings as wchar_t, for future compability
+// 
+// if using unicode characters, use unicode symbol syntax:
+// menadżer -> L"menad/x017cer" where \x017c is "ż"
+//
+
+IDI_BUGCHK ICON "resources\\bugchk.ico"
 
 STRINGTABLE
 BEGIN
+
+	MANAGER_MENU, L"Manager"	
+	MGR_BATMEASURE, L"Measure Battery Condition"
+	MGR_LASTMEASURE, L"Check Latest Measures..."
+	MGR_EXIT, L"Exit Battery Manager"
+	MGR_EXITDESC, L"Are you sure to exit Battery Manager?\n"
+
+	BATTERY_MENU, L"Battery"
+	BAT_CSYSBAT, L"See System-reported Battery Values"
+
 	LOADING_WINPROC, L"loading Window Procedures..."
-	WELCOME_MSG, L"Welcome to %s!"
+	WELCOME_MSG, L"Welcome to %ls!"		// using char in wchar_t's is showing gibberish, thats why whcar_t's in use (%ls)
 	
 	TITLE_NOJOB, L"BatteryMeter - No active Job"
-	TITLE_STATUS, L"BatteryMeter - Job Status: %s"
+	TITLE_STATUS, L"BatteryMeter - Job Status: %ls"
 	TITLE_JOBFAIL, L"BatteryMeter - Job Failed"
+
+	AC_CONN_STAT, L"AC Charger Status: %ls"
+
+	// ------------- ERRORS ----------------
+	
+	BUGCHK, L"An error occurred, that this BugCheck needed to take action."
+	
+	ERR_MISSING_FUNC, L"Missing functionality - This Feature is broken or not complete\n Error 1"
+	ERR_LOAD_DLL_FAILED, L"Cannot load Dynamic Link Library (DLL): %ls\nError 2"
+	ERR_NO_SUCH_DLL_FUNC, L"Cannot find function %ls in %ls\nError 3"
 	
 END
