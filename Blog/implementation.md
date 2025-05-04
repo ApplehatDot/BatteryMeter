@@ -56,7 +56,6 @@ int main() {
 This one has some issues with Life Time Battery indicator beside being disconnected, still shows "NO READING - Charger is connected". But it dosen't matter - since it's a playground, dosen't have to work.
 ___
 
-
 ###
 
 **Learning how to use resource strings in the code** ... i'll be honest, i used ChatGPT with generating resource files and i had nothing else to that -  today i tried to get it working, and see if its better:
@@ -70,4 +69,7 @@ While being in school, I made a basic WinAPI window with 300 x 430 (Uploading ma
 
 
 ![image](https://github.com/user-attachments/assets/000c25d7-a125-4066-89af-4385db272fd3)
+
+## 3. renewing work onn the project
+Since i got no school stress and all that, i can _peacefully work on this project_. Let's clean up this mess tho...
 
