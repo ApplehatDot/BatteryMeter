@@ -52,8 +52,8 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
     }
     return 0;
 }
-// extern "C" __declspec(dllexport) void BugCHK(HINSTANCE hInstance, HWND hwndParent, char *descript) {
-int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow){
+extern "C" __declspec(dllexport) void BugCHK(HINSTANCE hInstance, HWND hwndParent, wchar_t *descript) {
+//int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow){
     WNDCLASSEX wc;
     HWND hwnd;
     MSG Msg;
@@ -76,7 +76,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     // register class
     if(!RegisterClassEx(&wc)) {
         MessageBox(NULL, "Window Registration Failed!", "Error!", MB_ICONEXCLAMATION | MB_OK);
-        return 0;
+
     }
 
     // creating a window
@@ -90,27 +90,28 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
     if(hwnd == NULL) {
         MessageBox(NULL, "Window Creation Failed!", "Error!", MB_ICONEXCLAMATION | MB_OK);
-        return 0;
+
     }
 
     ShowWindow(hwnd, nCmdShow);
     UpdateWindow(hwnd);
+    SetWindowTextW(hText, descript);	// change the text to one specified in the call
 
     // Główna pętla komunikatów
     while(GetMessage(&Msg, NULL, 0, 0) > 0) {
         TranslateMessage(&Msg);
         DispatchMessage(&Msg);
     }
-    return Msg.wParam;
+
 }
 
 
 void addtexts(HWND hwnd){
 	char buffer[256];
 
-    LoadString(GetModuleHandle(NULL), DESCR, buffer, sizeof(buffer));
+    LoadStringW(GetModuleHandle(NULL), DESCR, buffer, sizeof(buffer));
 
-    HWND Descrpt = CreateWindowEx(0, "STATIC", buffer, WS_CHILD | WS_VISIBLE,
+    HWND Descrpt = CreateWindowExW(0, L"STATIC", buffer, WS_CHILD | WS_VISIBLE,
         60, 23, 320, 120, hwnd, NULL, GetModuleHandle(NULL), NULL);
 		
 	HFONT hFont = (HFONT)GetStockObject(DEFAULT_GUI_FONT);
@@ -119,15 +120,15 @@ void addtexts(HWND hwnd){
         280, 240, 100, 30, hwnd, (HMENU)100, GetModuleHandle(NULL), NULL);
 		
 	
-	hText = CreateWindowEx(
+	hText = CreateWindowExW(
 		0,
-		"EDIT", 
-		"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",	//descript
+		L"EDIT", 
+		L"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",	//descript
 		WS_CHILD | WS_VISIBLE | WS_VSCROLL | ES_LEFT | ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY,
 		20, 60, 
 		360, 170,
 		hwnd, NULL, NULL, NULL);
     
     SendMessage(Descrpt, WM_SETFONT, (WPARAM)hFont, TRUE);
-	SendMessage(hButton, WM_SETFONT, (WPARAM)hFont, TRUE);
+    SendMessage(hButton, WM_SETFONT, (WPARAM)hFont, TRUE);
 }
