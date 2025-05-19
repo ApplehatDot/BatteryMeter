@@ -71,5 +71,5 @@ While being in school, I made a basic WinAPI window with 300 x 430 (Uploading ma
 ![image](https://github.com/user-attachments/assets/000c25d7-a125-4066-89af-4385db272fd3)
 
 ## 3. renewing work onn the project
-Since i got no school stress and all that, i can _peacefully work on this project_. Let's clean up this mess tho... | [see commit]()
+Since i got no school stress and all that, i can _peacefully work on this project_. Let's clean up this mess tho... | [see commit](https://github.com/ApplehatDot/BatteryMeter/commit/6c74015009b0ddb768114440fccaf22088fe5e51)
 
