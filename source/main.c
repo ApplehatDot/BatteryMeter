@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "resource.h"
 #include "EZfunc/PredFunc.c"
+#include "Measure/Measure.c"
 
 //// Definitions
 HWND hWelcome;
@@ -41,10 +42,10 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam){
 			return 0;
 			break;
 		case WM_CREATE:
-			CreateWindowExW(		// 		why is there a whole empty thing?
-				0,			// it's a lazy BG fix, too lazy to search internet for now
-				L"STATIC",		// it uses the system theme BG - so it dosen't look weird
-				L"",			// 			- Applehat 				03.05.2025 20:17 
+			CreateWindowExW(			// 		why is there a whole empty thing?
+				0,						// it's a lazy BG fix, too lazy to search internet for now
+				L"STATIC",				// it uses the system theme BG - so it dosen't look weird
+				L"",					// 			- Applehat 				03.05.2025 20:17 
 				WS_VISIBLE | WS_CHILD,	// DWstyles
 				0, 0,
 				300, 430,
@@ -70,33 +71,12 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam){
 					break;
 
 				// can't define them in the case :/
-				typedef void (__stdcall *SHOWBugCHKFunc)(HINSTANCE, HWND, wchar_t*);
-				HINSTANCE hLib;
-
+				case MGR_BATMEASURE:
+					MeasureDialog(hInstance, hwnd);
+					break;
 				case BAT_CSYSBAT:
-					hLib = LoadLibraryW(L"BugChk.dll");
-					wchar_t LIBNAME[128] = L"BugChk.dll";
-
-					wchar_t erwstr[256];
-					// format a wchar_t to add a libname
-					swprintf(errwstr, (wchar_t*)FetchStringW(hInstance, ERR_LOAD_DLL_FAILED), LIBNAME);
-
-					if(!hLib){
-						MessageBoxW(hwnd, errwstr, L"Error 2", MB_ICONERROR | MB_OK);
-						return 2;
-					}
-					SHOWBugCHKFunc BugCHK = (SHOWBugCHKFunc)GetProcAddress(hLib, "BugCHK");
-					wchar_t FUNCNAME[256] = L"BugCHK(HINSTANCE, HWND, WCHAR_T)";
-					if(!BugCHK){
-						swprintf(errwstr, (wchar_t*)FetchStringW(hInstance, ERR_NO_SUCH_DLL_FUNC), FUNCNAME, LIBNAME);
-
-						MessageBoxW(hwnd, errwstr, L"Error 3", MB_ICONEXCLAMATION | MB_OK);
-						FreeLibrary(hLib);
-						return 3;
-					}
-
-					// all of it just for that.
-					BugCHK(hInstance, hwnd, (wchar_t*)FetchStringW(hInstance, ERR_MISSING_FUNC));
+					//nothin yet.
+					break;
 			}
 		default:
 			return DefWindowProcW(hwnd, uMsg, wParam, lParam);
