@@ -2,6 +2,7 @@
 
 #include <windows.h>
 
+HINSTANCE hInstance;
 HWND hTimerCounter, hDescription;
 HMENU hStartMeasure;
 int SECONDS;
