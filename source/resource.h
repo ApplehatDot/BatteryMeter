@@ -17,7 +17,6 @@
 #define WINDOW_TITLE 1006
 #define BATTERY_VALUES 1007
 #define FETCHING_VALUES 1008
-#define AC_CONN_STAT 1009
 // -----------------------------
 
 
