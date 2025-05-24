@@ -11,13 +11,17 @@
 #define MGR_EXITDESC 14
 #define MGR_EXITITLE 15
 
+
+
 // ---  Battery Diag strings ---
 #define BATTERY_MENU 2
 #define BAT_CSYSBAT 21
 #define WINDOW_TITLE 1006
 #define BATTERY_VALUES 1007
 #define FETCHING_VALUES 1008
+#define AC_CONN_STAT 1009
 // -----------------------------
+
 
 
 // -------- MEASURE STRINGS --------
@@ -30,9 +34,9 @@
 // ---------------------------------
 
 
+
 #define LOADING_WINPROC 1001
 #define WELCOME_MSG 1002
-
 #define TITLE_NOJOB 1003
 #define TITLE_STATUS 1004
 #define TITLE_JOBFAIL 1005
@@ -44,3 +48,4 @@
 #define ERR_MISSING_FUNC 10000		// Err 1
 #define ERR_LOAD_DLL_FAILED 20000		// Err 2
 #define ERR_NO_SUCH_DLL_FUNC 30000	// Err 3
+#define ERR_FAILED_TO_FETCH_PWRSTAT 40000
