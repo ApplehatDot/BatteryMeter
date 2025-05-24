@@ -11,25 +11,46 @@ IDI_BUGCHK ICON "resources\\bugchk.ico"
 
 STRINGTABLE
 BEGIN
-
 	MANAGER_MENU, L"Manager"	
 	MGR_BATMEASURE, L"Measure Battery Condition"
 	MGR_LASTMEASURE, L"Check Latest Measures..."
 	MGR_EXIT, L"Exit Battery Manager"
 	MGR_EXITDESC, L"Are you sure to exit Battery Manager?\n"
+	
+	MGR_EXITITLE, L"Confirm\n"
 
+	// ---  Battery Diag strings ---
+	
 	BATTERY_MENU, L"Battery"
 	BAT_CSYSBAT, L"See System-reported Battery Values"
 
+	WINDOW_TITLE, L"System Reported Values"
+	BATTERY_VALUES, L"Battery Values"
+	FETCHING_VALUES, L"Please Wait, Fetching power values..."
+	AC_CONN_STAT, L"AC Charger Status: %ls"
+	// -----------------------------
+
+
+	// -------- MEASURE STRINGS --------
+	
+	MEASURE_TITLE, L"Measure Battery Condition"
+	MEASURE_ACTIVE_JOB, L"Measurng Battery..."
+	MEASURE_DESCR1, L"Before beginning the measuring process, make sure there are no apps that use much CPU power. the Measurement is made with CPU being in idle, reaching it's accurate reading about battery health"
+	MEASURE_COUNTER, L"Hours: %d\nMinutes: %d\nSeconds: %d\n"
+	MEASURE_STARTBTN ,L"Start Measuring\n"
+	MEASURE_HALTBTN, L"Stop Measuring\n"
+	
+	// ---------------------------------
+
 	LOADING_WINPROC, L"loading Window Procedures..."
-	WELCOME_MSG, L"Welcome to %ls!"		// using char in wchar_t's is showing gibberish, thats why whcar_t's in use (%ls)
+	WELCOME_MSG, L"Welcome to Battery Manager!"
 	
 	TITLE_NOJOB, L"BatteryMeter - No active Job"
-	TITLE_STATUS, L"BatteryMeter - Job Status: %ls"
+	TITLE_STATUS, L"BatteryMeter - Job Status: %s"
 	TITLE_JOBFAIL, L"BatteryMeter - Job Failed"
-
-	AC_CONN_STAT, L"AC Charger Status: %ls"
-
+	
+	
+	
 	// ------------- ERRORS ----------------
 	
 	BUGCHK, L"An error occurred, that this BugCheck needed to take action."
@@ -37,5 +58,5 @@ BEGIN
 	ERR_MISSING_FUNC, L"Missing functionality - This Feature is broken or not complete\n Error 1"
 	ERR_LOAD_DLL_FAILED, L"Cannot load Dynamic Link Library (DLL): %ls\nError 2"
 	ERR_NO_SUCH_DLL_FUNC, L"Cannot find function %ls in %ls\nError 3"
-	
+	ERR_FAILED_TO_FETCH_PWRSTAT, L"Failed to fetch power status\nError 4"
 END

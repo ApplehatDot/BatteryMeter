@@ -41,7 +41,6 @@
 #define TITLE_STATUS 1004
 #define TITLE_JOBFAIL 1005
 
-#define AC_CONN_STAT 1300
 
 // ------------- ERRORs ------------ 
 
