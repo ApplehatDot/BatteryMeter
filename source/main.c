@@ -3,6 +3,7 @@
 #include "resource.h"
 #include "EZfunc/PredFunc.c"
 #include "Measure/Measure.c"
+#include "BatteryValues/BatteryDialog.c"
 
 //// Definitions
 HWND hWelcome;
