@@ -67,15 +67,16 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam){
 		case WM_COMMAND:
 			switch(wParam){
 				case MGR_EXIT:
-					MessageBoxW(hwnd, FetchStringW(hInstance, MGR_EXITDESC), L"Confirm", MB_YESNO);
+					if(MessageBoxW(hwnd, FetchStringW(hInstance, MGR_EXITDESC), L"Confirm", MB_ICONQUESTION | MB_YESNO) == IDYES){
+						DestroyWindow(hwnd);
+					}
 					break;
 
-				// can't define them in the case :/
 				case MGR_BATMEASURE:
 					MeasureDialog(hInstance, hwnd);
 					break;
 				case BAT_CSYSBAT:
-					//nothin yet.
+					ShowBatteryValuesDialog(hInstance, hwnd);
 					break;
 			}
 		default:
