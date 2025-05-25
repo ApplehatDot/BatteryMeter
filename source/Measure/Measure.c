@@ -29,6 +29,8 @@ LRESULT CALLBACK MeasureProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) 
 				hInstance,
 				NULL
 				);
+				
+			SetSystemThemeFont(hDescription);
 		
 			SetTimer(hwnd, 1, 1000, NULL);
 		break;
