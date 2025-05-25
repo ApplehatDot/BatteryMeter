@@ -28,7 +28,7 @@
 #define MEASURE_TITLE 1101
 #define MEASURE_ACTIVE_JOB 1102
 #define MEASURE_DESCR1 1103
-#define MEASURE_COUNTER 1104
+#define MEASURE_DESCR2 1104
 #define MEASURE_STARTBTN 1105
 #define MEASURE_HALTBTN 1106
 // ---------------------------------
