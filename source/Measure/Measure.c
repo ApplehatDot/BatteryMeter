@@ -32,12 +32,14 @@ LRESULT CALLBACK MeasureProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) 
 		
 			SetTimer(hwnd, 1, 1000, NULL);
 		break;
+		
 		case WM_CLOSE:
 			ShowWindow(hwnd, SW_HIDE);
 			return 0;
 		
 		case WM_TIMER:		
-			SECONDS++;
+			// nothing yet
+			
 		break;
 
 		
@@ -59,7 +61,7 @@ void MeasureDialog(HINSTANCE hInstance, HWND hwndParent){
 	
 	HWND hwnd = CreateWindowExW(
 		0,
-		L"BatteryValues",
+		L"Measure",
 		FetchStringW(hInstance, MEASURE_TITLE),
 		WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU,
 		CW_USEDEFAULT, CW_USEDEFAULT,
