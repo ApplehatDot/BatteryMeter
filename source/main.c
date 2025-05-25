@@ -74,7 +74,7 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam){
 					break;
 
 				case MGR_BATMEASURE:
-					MessageBoxW(hwnd, L"Clicked.", L"DebugGUI", MB_OK);
+					//MessageBoxW(hwnd, L"Clicked.", L"DebugGUI", MB_OK);
 					MeasureDialog(hInstance, hwnd);
 					break;
 				case BAT_CSYSBAT:
