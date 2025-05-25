@@ -35,7 +35,7 @@ BEGIN
 	
 	MEASURE_TITLE, L"Measure Battery Condition"
 	MEASURE_ACTIVE_JOB, L"Measurng Battery..."
-	MEASURE_DESCR1, L"Before beginning the measuring process, make sure there are no apps that use much CPU power. the Measurement is made with CPU being in idle, reaching it's accurate reading about battery health"
+	MEASURE_DESCR1, L"Before beginning the measuring process, make sure there are no apps that use much CPU power. the First Measurement is made with CPU being in idle, reaching it's accurate reading about idle condition of battery"
 	MEASURE_COUNTER, L"Hours: %d\nMinutes: %d\nSeconds: %d\n"
 	MEASURE_STARTBTN ,L"Start Measuring\n"
 	MEASURE_HALTBTN, L"Stop Measuring\n"
