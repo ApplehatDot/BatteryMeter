@@ -75,6 +75,7 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam){
 
 				case MGR_BATMEASURE:
 					MessageBoxW(hwnd, L"Clicked.", L"DebugGUI", MB_OK);
+					MeasureDialog(hInstance, hwnd);
 					break;
 				case BAT_CSYSBAT:
 					ShowBatteryValuesDialog(hInstance, hwnd);
