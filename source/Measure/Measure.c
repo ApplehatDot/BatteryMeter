@@ -1,7 +1,18 @@
 // Measure.c - Measure Battery condition 'til the 
 
+
+/*	TODO LIST:
+ [] - add menu for start/stop-ing the measurement
+ [] - Implement logic for making average battery condition from 3-step measures:
+		[] - Battery condition score as %
+		[] - Adding tips for maintaining batteries
+		[] - imagine getting winNT/2000 UPS service working :PP
+
+*/
+
 #include <windows.h>
 
+HMENU
 HINSTANCE hInstance;
 HWND hTimerCounter, hDescription;
 HMENU hStartMeasure;
