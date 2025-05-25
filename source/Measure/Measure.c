@@ -11,10 +11,9 @@
 */
 
 #include <windows.h>
-
-HMENU
+ 
 HINSTANCE hInstance;
-HWND hTimerCounter, hDescription;
+HWND hTimerCounter, hDescription1, hDescription2;
 HMENU hStartMeasure;
 
 LRESULT CALLBACK MeasureProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
@@ -29,7 +28,7 @@ LRESULT CALLBACK MeasureProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) 
 				300, 300,
 				hwnd,NULL, NULL, NULL);
 		
-			hDescription = CreateWindowExW(
+			hDescription1 = CreateWindowExW(
 				0,
 				L"STATIC",
 				FetchStringW(hInstance, MEASURE_DESCR1),
@@ -41,7 +40,22 @@ LRESULT CALLBACK MeasureProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) 
 				NULL
 				);
 				
-			SetSystemThemeFont(hDescription);
+					
+			hDescription2 = CreateWindowExW(
+				0,
+				L"STATIC",
+				FetchStringW(hInstance, MEASURE_DESCR2),
+				WS_VISIBLE | WS_CHILD,
+				10, 110, 275, 100,
+				hwnd,
+				NULL,
+				hInstance,
+				NULL
+				);
+
+				
+			SetSystemThemeFont(hDescription1);
+			SetSystemThemeFont(hDescription2);
 		
 			SetTimer(hwnd, 1, 1000, NULL);
 		break;
