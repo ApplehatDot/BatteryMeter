@@ -5,9 +5,6 @@
 HINSTANCE hInstance;
 HWND hTimerCounter, hDescription;
 HMENU hStartMeasure;
-int SECONDS;
-int MINUTES;
-int HOURS;
 
 LRESULT CALLBACK MeasureProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
 	switch(msg){
@@ -41,20 +38,8 @@ LRESULT CALLBACK MeasureProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) 
 		
 		case WM_TIMER:		
 			SECONDS++;
-			
-			if(SECONDS == 60){
-				MINUTES++; SECONDS = 0;
-			} else if(MINUTES  == 60){
-				HOURS++; MINUTES == 0;
-			}
 		break;
-		
-		case PBT_APMSUSPEND:	// when the system get's suspended
-			// write a function for saving up the score
-		break;
-		case PBT_APMRESUMESUSPEND:	// when system resumes fron suspended
-			// write a function for showing the results
-		break;
+
 		
 
 	}

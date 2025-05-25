@@ -74,13 +74,23 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam){
 					break;
 
 				case MGR_BATMEASURE:
-					MeasureDialog(hInstance, hwnd);
+					MessageBoxW(hwnd, L"Clicked.", L"DebugGUI", MB_OK);
 					break;
 				case BAT_CSYSBAT:
 					ShowBatteryValuesDialog(hInstance, hwnd);
 					break;
 			}
 		default:
+			
+			
+			/* ---- DEBUG -----
+			
+			printf("[DEBUG] wParam = %lu\n", (unsigned long)wParam);
+			if(wParam == MGR_BATMEASURE){
+				printf("[DEBUG] wParam of MGR_BATMEASURE has been detected\n");
+			}
+			
+			// ------------ */
 			return DefWindowProcW(hwnd, uMsg, wParam, lParam);
 	}
 	return 0;

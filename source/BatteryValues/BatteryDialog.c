@@ -3,6 +3,17 @@
 #include <windows.h>
 
 
+/*
+	*1 - usage of PredFunc.c despite no definition in here:
+		____________________________
+		|	#include "PredFunc.c"  |
+		|__________________________|
+		
+	the main definition uses no header files - cuz i found out
+	it's way eazier and cleaner by doing this. This or any file dosen't 
+	need the definition
+*/
+
 HINSTANCE hInstance;
 HWND hGroupBox;
 HWND hACLINE;
@@ -19,7 +30,7 @@ void ShowBatteryValuesDialog(HINSTANCE hInstance, HWND hwndParent){
     wc.hInstance = hInstance;
     wc.lpszClassName = L"BatteryValues";
     wc.hCursor = LoadCursor(NULL, IDC_ARROW);
-    wc.hbrBackground = NULL; // Systemowe tło
+    wc.hbrBackground = NULL; // Should be system background ... ignore
 
 	
 	RegisterClassW(&wc);
@@ -27,7 +38,7 @@ void ShowBatteryValuesDialog(HINSTANCE hInstance, HWND hwndParent){
 	HWND hwnd = CreateWindowExW(
 		0,
 		L"BatteryValues",
-		FetchStringW(hInstance, WINDOW_TITLE),
+		FetchStringW(hInstance, WINDOW_TITLE),	// <--- *1
 		WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU,
 		CW_USEDEFAULT, CW_USEDEFAULT,
 		300, 300,
