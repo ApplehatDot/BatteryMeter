@@ -34,20 +34,23 @@ BEGIN
 	// -------- MEASURE STRINGS --------
 	
 	MEASURE_TITLE, L"Measure Battery Condition"
-	MEASURE_ACTIVE_JOB, L"Measurng Battery..."
+	MEASURE_ACTIVE_JOB, L"Measuring Battery..."
 	MEASURE_DESCR1, L"Before beginning any of the measuring processes, make sure there are no apps that use much CPU power. the First Measurement is made with CPU being in idle, reaching it's accurate reading about idle condition of battery. however 2nd and 3rd measurements are making stress on the CPU to see how battery holds up."
 	MEASURE_DESCR2, L"Battery Condition check uses a 3-step measurements:\n- No-stress measurement\n- medium-stress measurement\n- full-stress measurement\nBatteryMeter uses these 3-steps to get an average % of the battery condition and displays a score to the user."
 	MEASURE_STARTBTN ,L"Start Measuring\n"
 	MEASURE_HALTBTN, L"Stop Measuring\n"
+	
+	MEASURE_MENU_MESOPTION, "Measure Options..."
+	MEASURE_OPTION, "Start measuring battery"
 	
 	// ---------------------------------
 
 	LOADING_WINPROC, L"loading Window Procedures..."
 	WELCOME_MSG, L"Welcome to Battery Manager!"
 	
-	TITLE_NOJOB, L"BatteryMeter - No active Job"
-	TITLE_STATUS, L"BatteryMeter - Job Status: %s"
-	TITLE_JOBFAIL, L"BatteryMeter - Job Failed"
+	TITLE_NOJOB, L"BatteryManager - No active Job"
+	TITLE_STATUS, L"BatteryManager - Job Status: %s"
+	TITLE_JOBFAIL, L"BatteryManager - Job Failed"
 	
 	
 	
